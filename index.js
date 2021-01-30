@@ -17,7 +17,11 @@ Do the following:
 
    HINT: no function required
 */
+var votingAge = 18
 
+if (votingAge > 18) {
+  console.log(true);
+}
 
 
 /*
@@ -31,7 +35,11 @@ Do the following:
    HINT: no function required
 */
 
+let a = 1
+let b = 2
 
+a = a + b
+console.log(a);
 
 
 
@@ -58,10 +66,11 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
-  }
+function multiply(a, b) {
+  return a * b
+}
 
+multiply(1, 2);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -74,10 +83,11 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(a) {
+  return a * 7
 }
 
+dogYears(9);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -105,13 +115,29 @@ Use the hungryDog function and feeding requirements below to do the following:
      7 - 12 months 4% of their body weight
     
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
-*/  
+*/
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(lbs, age) {
+  if (age >= 1 / 6 && age < 1 / 3) {
+    return lbs * 0.1
+  } else if (age >= 1 / 3 && age < 7 / 12) {
+    return lbs * 0.05
+  } else if (age >= 7 / 12 && age < 1) {
+    return lbs * 0.04
+  } else if (age >= 1) {
+    if (lbs <= 5) {
+      return lbs * 0.05
+    } else if (lbs >= 6 && lbs <= 10) {
+      return lbs * 0.04
+    } else if (lbs >= 11 && lbs <= 15) {
+      return lbs * 0.03
+    } else if (lbs > 15) {
+      return lbs * 0.02
+    }
   }
+}
 
-
+hungryDog(15, 1);
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -134,11 +160,96 @@ Use the game function below to do the following:
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
-function game(user, computer){
-    /*add your code here*/
+
+function game(user) {
+
+  let computer
+  let result = Math.random() * 3
+
+  if (result < 1) {
+    computer = 'rock'
+  } else if (result > 1 && result < 2) {
+    computer = 'paper'
+  } else if (result > 2) {
+    computer = 'scissors'
+  }
+
+  if (computer == 'rock') {
+    if (user == 'rock') {
+      return "it's a tie"
+    }
+  }
+  if (computer == 'paper') {
+    if (user == 'paper') {
+      return "it's a tie"
+    }
+  }
+
+  if (computer == 'scissors') {
+    if (user == 'paper') {
+      return "you lose!"
+    }
+  }
+  if (computer == 'rock') {
+    if (user == 'scissors') {
+      return "you lose!"
+    }
+  }
+  if (computer == 'paper') {
+    if (user == 'rock') {
+      return "you lose!"
+    }
+  }
+
+  if (computer == 'scissors') {
+    if (user == 'rock') {
+      return "you win!"
+    }
+  }
+  if (computer == 'rock') {
+    if (user == 'paper') {
+      return "you win!"
+    }
+  }
+  if (computer == 'paper') {
+    if (user == 'scissors') {
+      return "you win!"
+    }
+  }
 }
-  
-  
+
+// if (user == 'rock' && computer == 'paper') {
+//   return "you lose!"
+// } else if (user == 'paper' && computer == 'scissors') {
+//   return "you lose!"
+// } else if (user == 'scissors' && computer == 'rock') {
+//   return "you lose!"
+// } else if (user == 'rock' && computer == 'rock') {
+//   return "it's a tie"
+// } else if (user == 'paper' && computer == 'paper') {
+//   return "it's a tie"
+// } else if (user == 'scissors' && computer == 'scissors') {
+//   return "it's a tie"
+// } else if (user == 'rock' && computer == 'scissors') {
+//   return "you lose!"
+// } else if (user == 'paper' && computer == 'rock') {
+//   return "you lose!"
+// } else if (user == 'scissors' && computer == 'paper') {
+//   return "you lose!"
+// }
+
+// if computer == rock
+// user == rock
+// return tie
+
+// user == paper
+// user == scissors
+
+
+// if computer == paper
+
+// if computer == scissors
+
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -151,10 +262,11 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
-  }
+function miles(kilometers) {
+  return kilometers * 0.621371
+}
 
+miles(10);
 
 
 //Task 5b - Feet to CM
@@ -165,10 +277,11 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
-  }
- 
+function feet(cm) {
+  return cm / 30.48
+}
+
+feet(10);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -181,10 +294,11 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
+function annoyingSong(startingNumber) {
+  for (let i = startingNumber; i > 0; i--) {
+    return `${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i - 1} bottles of soda on the wall`
   }
-
+}
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -193,19 +307,29 @@ function annoyingSong(/*add your code here*/){
 Using the grade function below do the following: 
   1. Receive a score out of 100 
   2. Return the corresponding letter grade following this grade scale:
-
+ 
    90-100 should return 'you got an A' 
    80-89 should return 'you got a B'
    70-79 should return 'you got a C'
    60-69 should return 'you got a D'
    below should return 'you got an F'
 */
-  
-function grade(/*Your Code here */){
-  /*Your Code here */
+
+function grade(gradeNum) {
+  if (gradeNum <= 100 && gradeNum >= 90) {
+    return "you got an A"
+  } else if (gradeNum <= 89 && gradeNum >= 80) {
+    return "you got a B"
+  } else if (gradeNum <= 79 && gradeNum >= 70) {
+    return "you got a C"
+  } else if (gradeNum <= 69 && gradeNum >= 60) {
+    return "you got a D"
+  } else {
+    return "you got an F"
   }
-  
-  
+}
+
+
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
 
@@ -221,25 +345,25 @@ Using the vowelCounter function below do the following:
 
 
 function vowelCounter(/*add your code here*/) {
-    /*add your code here*/
+  /*add your code here*/
 }
 
 
 
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
-function foo(){
-    //console.log('its working');
-    return 'bar';
+function foo() {
+  //console.log('its working');
+  return 'bar';
 }
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Don't touch the code after this line! 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
-export default{
-    foo,
-    multiply,
-    dogYears,
-    hungryDog,
-    game,
-    miles,
-    feet,
-    annoyingSong,
-    grade
+export default {
+  foo,
+  multiply,
+  dogYears,
+  hungryDog,
+  game,
+  miles,
+  feet,
+  annoyingSong,
+  grade
 }
